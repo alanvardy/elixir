@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure your application as:
 #
-#     config :testing, key: :value
+#     config :elixir, key: :value
 #
 # and access this configuration in your application as:
 #
-#     Application.get_env(:testing, :key)
+#     Application.get_env(:elixir, :key)
 #
 # You can also configure a third-party app:
 #
