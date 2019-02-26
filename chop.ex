@@ -5,15 +5,15 @@ defmodule Chop do
 
   def halve(answer, range) do
     first..last = range
-    guessy = div(last + first, 2)
-    IO.puts("Is it #{guessy}?")
+    guess = div(last + first, 2)
+    IO.puts("Is it #{guess}?")
 
     cond do
-      answer > guessy ->
-        halve(answer, (guessy + 1)..last)
+      answer > guess ->
+        halve(answer, (guess + 1)..last)
 
-      answer < guessy ->
-        halve(answer, first..(guessy - 1))
+      answer < guess ->
+        halve(answer, first..(guess - 1))
 
       true ->
         IO.puts("The answer is #{answer}!")
