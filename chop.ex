@@ -5,20 +5,20 @@ defmodule Chop do
 
   def halve(answer, range) do
     first..last = range
-    attempt = div(last - first, 2)
-    IO.puts("Is it #{attempt}?")
+    guessy = div(last + first, 2)
+    IO.puts("Is it #{guessy}?")
 
     cond do
-      answer > attempt ->
-        halve(answer, (attempt + 1)..last)
+      answer > guessy ->
+        halve(answer, (guessy + 1)..last)
 
-      answer < attempt ->
-        halve(answer, first..(attempt - 1))
+      answer < guessy ->
+        halve(answer, first..(guessy - 1))
 
-        # true ->
-        #   answer
+      true ->
+        IO.puts("The answer is #{answer}!")
     end
   end
 end
 
-Chop.guess(83, 1..1000)
+Chop.guess(837_462_384, 1..729_385_734_985_734_983_495_724_985_724_895)
