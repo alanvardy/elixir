@@ -2,7 +2,8 @@ defmodule MyList do
   def mapsum(list, func) do
     list
     |> map(func)
-    |> sum()
+    |> sum(0)
+    |> inspect()
     |> IO.puts()
   end
 
@@ -11,14 +12,14 @@ defmodule MyList do
   end
 
   def map([head | tail], func) do
-    [func.(head) | mapsum(tail, func)]
+    [func.(head) | map(tail, func)]
   end
 
-  def sum([], _total) do
-    0
+  def sum([], total) do
+    total
   end
 
-  def sum([head | tail], total \\ 0) do
+  def sum([head | tail], total) do
     sum(tail, total + head)
   end
 end
